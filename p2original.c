@@ -45,5 +45,6 @@ int cmp(int a,int b, int c)
    c=input();
    large=cmp(a,b,c);
    output(a,b,c,large);
+   return 0;
 
  }
