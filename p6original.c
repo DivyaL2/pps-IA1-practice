@@ -11,13 +11,16 @@ int strcmp(char *a, char *b)
   
   for(int i=0;a[i]!='\0'&& a[i]==b[i];i++)
   {
-   return a[i]-b[i];
+   if(a[i]>b[i])
+     return 1;
+   else
+     return 2;
   }
   
 }
 void output(char *a, char *b, int result)
 {
-  if(result>1)
+  if(result==1)
   {
     printf("%s is greater than %s\n",a,b);
   }
