@@ -1,24 +1,38 @@
 #include<stdio.h>
-#include<string.h>
-void input_two_string(char a, char b)
+
+void input_two_string(char *a,char *b)
 {
-  printf("enter the two strings\n");
+  printf("enter two string\n");
   scanf("%s%s",a,b);
+  
 }
-int strcmp(char a, char b)
+int strcmp(char *a, char *b)
 { 
-  int flag=0;
-  for(int i=0;a[i]!=\'0'&& a[i]==b[i];i++);
+  
+  for(int i=0;a[i]!='\0'&& a[i]==b[i];i++)
   {
-    if(a[i]!=b[i])
-      flag=1;
+   return a[i]-b[i];
   }
-  return flag;
+  
 }
-void output(char a, char b, int result)
+void output(char *a, char *b, int result)
 {
-  if(result==1)
+  if(result>1)
   {
-    printf("")
+    printf("%s is greater than %s\n",a,b);
   }
+  else 
+  {
+    printf("%s is greater than %s\n",b,a);
+  }
+    
+}
+int main()
+{
+  int k;
+  char a[15],b[15];
+  input_two_string(a,b);
+  k=strcmp(a,b);
+  output(a,b,k);
+  return 0;
 }
