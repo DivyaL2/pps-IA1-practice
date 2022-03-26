@@ -1,0 +1,46 @@
+gcc -g p10original.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x837: file p10original.c, line 26.
+(gdb) r
+Starting program: /home/runner/pps-test1-DivyaL2-23/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p10original.c:26
+26    printf("enter the first complex number a+bi in the form 'a b;\n");
+(gdb) n
+enter the first complex number a+bi in the form 'a b;
+27    a=input_chellox();
+(gdb) n
+6 7
+28    printf("enter the first complex number a+bi in the form 'a b'\n");
+(gdb) n
+enter the first complex number a+bi in the form 'a b'
+29    b=input_chellox();
+(gdb) n
+8 9
+30    c=add_cmplx(a,b);
+(gdb) n
+31    output(a,b,c);
+(gdb) n
+(6+7i)+(8+9i)is(14+16i)
+33  }
+(gdb) c
+Continuing.
+[Inferior 1 (process 767) exited normally]
+(gdb) 
